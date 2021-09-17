@@ -1077,3 +1077,92 @@ Processing by CatsController#show as HTML
 Completed 200 OK in 363ms (Views: 360.1ms | ActiveRecord: 1.3ms)
 
 
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCatRentalRequests (20210917200221)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20210917200221_create_cat_rental_requests.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "cat_rental_requests" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "cat_id" integer NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "status" varchar DEFAULT 'PENDING' NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20210917200221_create_cat_rental_requests.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_cat_rental_requests_on_cat_id" ON "cat_rental_requests" ("cat_id")[0m
+  ↳ db/migrate/20210917200221_create_cat_rental_requests.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210917200221"]]
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCatRentalRequest Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_id = 1) AND NOT (id = NULL) AND (start_date BETWEEN '2014-01-01' AND '2015-01-01') AND (status = 'APPROVED') LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCatRentalRequest Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_id = 5) AND NOT (id = NULL) AND (start_date BETWEEN '2014-01-01' AND '2015-01-01') AND (status = 'APPROVED') LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (0.0ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Create (0.6ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["cat_id", 5], ["start_date", "2014-01-01"], ["end_date", "2015-01-01"], ["status", "APPROVED"], ["created_at", "2021-09-17 20:28:24.467963"], ["updated_at", "2021-09-17 20:28:24.467963"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCatRentalRequest Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_id = 5) AND NOT (id = NULL) AND (start_date BETWEEN '2014-02-01' AND '2015-01-01') AND (status = 'APPROVED') LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (0.0ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["cat_id", 5], ["start_date", "2014-02-01"], ["end_date", "2015-01-01"], ["status", "APPROVED"], ["created_at", "2021-09-17 20:28:55.920668"], ["updated_at", "2021-09-17 20:28:55.920668"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (cat_id = 5) AND NOT (id = 2) AND (start_date BETWEEN '2014-02-01' AND '2015-01-01')[0m
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests"[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCatRentalRequest Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_id = 5) AND NOT (id = NULL) AND (start_date BETWEEN '2014-02-01' AND '2015-01-01') AND (status = 'APPROVED') LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCat Load (0.1ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Create (0.4ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["cat_id", 5], ["start_date", "2014-02-01"], ["end_date", "2015-01-01"], ["status", "APPROVED"], ["created_at", "2021-09-17 20:33:19.536852"], ["updated_at", "2021-09-17 20:33:19.536852"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (cat_id = 5) AND NOT (id = 3) AND (start_date BETWEEN '2014-02-01' AND '2015-01-01')[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCatRentalRequest Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE (cat_id = 5) AND NOT (id = 3) AND (start_date BETWEEN '2014-02-01' AND '2015-01-01') AND (status = 'APPROVED') LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCatRentalRequest Load (1.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCatRentalRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND (start_date BETWEEN 2014-02-01 AND 2015-01-01) AND (status = 'APPROVED') LIMIT ?[0m  [["cat_id", 5], ["LIMIT", 1]]
+  [1m[36mCat Load (0.1ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Create (0.6ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["cat_id", 5], ["start_date", "2014-02-01"], ["end_date", "2015-01-01"], ["created_at", "2021-09-17 20:34:50.164299"], ["updated_at", "2021-09-17 20:34:50.164299"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" != ? AND (start_date BETWEEN 2014-02-01 AND 2015-01-01)[0m  [["cat_id", 5], ["id", 4]]
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" != ? AND (start_date BETWEEN 2014-02-01 AND 2015-01-01)[0m  [["cat_id", 5], ["id", 4]]
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND (start_date BETWEEN 2014-02-01 AND 2015-01-01)[0m  [["cat_id", 5]]
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests"[0m
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND (start_date BETWEEN 2014-02-01 AND 2015-01-01)[0m  [["cat_id", 5]]
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND (start_date BETWEEN 2014-02-01 AND 2015-01-01)[0m  [["cat_id", 5]]
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL[0m  [["cat_id", 5]]
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND (start_date BETWEEN 2014-02-01 AND 2015-01-01)[0m  [["cat_id", 5]]
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND (2014-02-01 BETWEEN start_date AND end_date)[0m  [["cat_id", 5]]
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (2014-02-01 BETWEEN start_date AND end_date)[0m
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests"[0m
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (2014-02-01 BETWEEN start_date AND end_date)[0m
+  [1m[36mCatRentalRequest Load (0.1ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests"[0m
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (start_date < '2015-01-01')[0m
+  [1m[36mCatRentalRequest Load (0.5ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE (start_date <= '2015-01-01' AND start_date >= '2014-02-01')[0m
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE ((start_date <= '2015-01-01' AND start_date >= '2014-02-01') OR (end_date <= '2015-01-01' AND end_date >= '2014-02-01'))[0m
+  [1m[36mCatRentalRequest Load (0.6ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND ((start_date <= '2015-01-01' AND start_date >= '2014-02-01') OR (end_date <= '2015-01-01' AND end_date >= '2014-02-01'))[0m  [["cat_id", 5]]
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND ((start_date <= '2015-01-01' AND start_date >= '2014-02-01') OR (end_date <= '2015-01-01' AND end_date >= '2014-02-01')) AND (status = 'APPROVED')[0m  [["cat_id", 5]]
+  [1m[36mCatRentalRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND ((start_date <= '2015-01-01' AND start_date >= '2014-02-01') OR (end_date <= '2015-01-01' AND end_date >= '2014-02-01')) AND (status = 'APPROVED') LIMIT ?[0m  [["cat_id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCatRentalRequest Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND ((start_date <= '2015-01-01' AND start_date >= '2014-02-01') OR (end_date <= '2015-01-01' AND end_date >= '2014-02-01')) AND (status = 'APPROVED') LIMIT ?[0m  [["cat_id", 5], ["LIMIT", 1]]
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Create (0.8ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "start_date", "end_date", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["cat_id", 5], ["start_date", "2014-02-01"], ["end_date", "2015-01-01"], ["status", "APPROVED"], ["created_at", "2021-09-17 21:01:26.116894"], ["updated_at", "2021-09-17 21:01:26.116894"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCatRentalRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND ((start_date <= '2015-01-01' AND start_date >= '2014-02-01') OR (end_date <= '2015-01-01' AND end_date >= '2014-02-01')) AND (status = 'APPROVED') LIMIT ?[0m  [["cat_id", 5], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = ? AND "cat_rental_requests"."id" IS NOT NULL AND ((start_date <= '2015-01-01' AND start_date >= '2014-02-01') OR (end_date <= '2015-01-01' AND end_date >= '2014-02-01')) AND (status = 'APPROVED') LIMIT ?[0m  [["cat_id", 5], ["LIMIT", 1]]
+  [1m[36mCat Load (0.1ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
