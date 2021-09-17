@@ -811,3 +811,269 @@ Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
 ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
 
 Started POST "/__better_errors/3a67cceb829ac622/variables" for ::1 at 2021-09-17 14:58:41 -0400
+Started GET "/cats/new" for ::1 at 2021-09-17 15:09:02 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jortz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 1981ms (Views: 1906.5ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/cats" for ::1 at 2021-09-17 15:09:22 -0400
+Processing by CatsController#create as HTML
+  Parameters: {"cat"=>{"name"=>"Emily", "birthdate"=>"2021-09-01", "color"=>"grey", "sex"=>"F", "description"=>"Emily is a cat."}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/6aa5b1f6facac955/variables" for ::1 at 2021-09-17 15:09:22 -0400
+Started POST "/cats" for ::1 at 2021-09-17 15:17:22 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jortz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#create as HTML
+  Parameters: {"cat"=>{"name"=>"Emily", "birthdate"=>"2021-09-01", "color"=>"grey", "sex"=>"F", "description"=>"Emily is a cat."}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/82653ef8c5f00d3b/variables" for ::1 at 2021-09-17 15:17:23 -0400
+Started POST "/cats" for ::1 at 2021-09-17 15:20:05 -0400
+Processing by CatsController#create as HTML
+  Parameters: {"cat"=>{"name"=>"Emily", "birthdate"=>"2021-09-01", "color"=>"grey", "sex"=>"F", "description"=>"Emily is a cat."}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/97a5533e301ed445/variables" for ::1 at 2021-09-17 15:20:05 -0400
+Started POST "/cats" for ::1 at 2021-09-17 15:20:17 -0400
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/jortz/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#create as HTML
+  Parameters: {"cat"=>{"name"=>"Emily", "birthdate"=>"2021-09-01", "color"=>"grey", "sex"=>"F", "description"=>"Emily is a cat."}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cats_controller.rb:21
+  [1m[36mCat Create (7.6ms)[0m  [1m[32mINSERT INTO "cats" ("birthdate", "color", "name", "sex", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["birthdate", "2021-09-01"], ["color", "grey"], ["name", "Emily"], ["sex", "F"], ["description", "Emily is a cat."], ["created_at", "2021-09-17 19:20:18.225668"], ["updated_at", "2021-09-17 19:20:18.225668"]]
+  ↳ app/controllers/cats_controller.rb:21
+  [1m[35m (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cats_controller.rb:21
+Redirected to http://localhost:3000/cats/9
+Completed 302 Found in 106ms (ActiveRecord: 21.4ms)
+
+
+Started GET "/cats/9" for ::1 at 2021-09-17 15:20:18 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCat Load (1.7ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 1148ms (Views: 1141.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/cats/9/edit" for ::1 at 2021-09-17 15:26:02 -0400
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCat Load (2.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:29
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (299.3ms)
+Completed 500 Internal Server Error in 507ms (ActiveRecord: 2.4ms)
+
+
+
+NameError - undefined local variable or method `cat' for #<#<Class:0x000056058fc08768>:0x00007fa0b9d52558>
+Did you mean?  @cat:
+  app/views/cats/edit.html.erb:18:in `_app_views_cats_edit_html_erb___835837545479615214_70164144621920'
+  app/controllers/cats_controller.rb:30:in `edit'
+
+Started POST "/__better_errors/6295ed80d6affa3d/variables" for ::1 at 2021-09-17 15:26:02 -0400
+Started GET "/cats/9/edit" for ::1 at 2021-09-17 15:26:24 -0400
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCat Load (5.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:29
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (447.2ms)
+Completed 500 Internal Server Error in 635ms (ActiveRecord: 5.2ms)
+
+
+
+NameError - undefined local variable or method `selected' for #<#<Class:0x000056058fc08768>:0x00007fa0b9c5aad8>
+Did you mean?  select:
+  app/views/cats/edit.html.erb:20:in `_app_views_cats_edit_html_erb___835837545479615214_70164144114640'
+  app/controllers/cats_controller.rb:30:in `edit'
+
+Started POST "/__better_errors/e2605c2dde2ccdf7/variables" for ::1 at 2021-09-17 15:26:26 -0400
+Started GET "/cats/9/edit" for ::1 at 2021-09-17 15:27:00 -0400
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCat Load (1.9ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:29
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/edit.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 432ms (Views: 428.8ms | ActiveRecord: 1.9ms)
+
+
+Started PATCH "/cats/9" for ::1 at 2021-09-17 15:27:14 -0400
+Processing by CatsController#update as HTML
+  Parameters: {"cat"=>{"name"=>"Emily", "birthdate"=>"2021-09-01", "color"=>"grey", "sex"=>"M", "description"=>"        Emily is a fat cat.\r\n    "}, "id"=>"9"}
+  [1m[36mCat Load (2.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cats_controller.rb:36
+  [1m[36mCat Update (4.7ms)[0m  [1m[33mUPDATE "cats" SET "sex" = ?, "description" = ?, "updated_at" = ? WHERE "cats"."id" = ?[0m  [["sex", "M"], ["description", "        Emily is a fat cat.\r\n    "], ["updated_at", "2021-09-17 19:27:14.566564"], ["id", 9]]
+  ↳ app/controllers/cats_controller.rb:36
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cats_controller.rb:36
+Redirected to http://localhost:3000/cats/9
+Completed 302 Found in 24ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/cats/9" for ::1 at 2021-09-17 15:27:14 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCat Load (5.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 392ms (Views: 384.3ms | ActiveRecord: 5.3ms)
+
+
+Started PATCH "/cats/9" for ::1 at 2021-09-17 15:34:20 -0400
+Processing by CatsController#update as HTML
+  Parameters: {"cat"=>{"name"=>"Emily", "birthdate"=>"2021-09-01", "color"=>"grey", "sex"=>"M", "description"=>"        Emily is the fattest cat.\r\n    "}, "id"=>"9"}
+  [1m[36mCat Load (1.6ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:34
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cats_controller.rb:36
+  [1m[36mCat Update (4.4ms)[0m  [1m[33mUPDATE "cats" SET "description" = ?, "updated_at" = ? WHERE "cats"."id" = ?[0m  [["description", "        Emily is the fattest cat.\r\n    "], ["updated_at", "2021-09-17 19:34:20.371517"], ["id", 9]]
+  ↳ app/controllers/cats_controller.rb:36
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cats_controller.rb:36
+Redirected to http://localhost:3000/cats/9
+Completed 302 Found in 17ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/cats/9" for ::1 at 2021-09-17 15:34:20 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCat Load (2.0ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 412ms (Views: 407.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/cats" for ::1 at 2021-09-17 15:34:43 -0400
+Processing by CatsController#create as HTML
+  Parameters: {"cat"=>{"name"=>"Tony", "birthdate"=>"2021-08-18", "color"=>"brown", "sex"=>"M", "description"=>"Tony is a cat."}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cats_controller.rb:21
+  [1m[36mCat Create (16.0ms)[0m  [1m[32mINSERT INTO "cats" ("birthdate", "color", "name", "sex", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["birthdate", "2021-08-18"], ["color", "brown"], ["name", "Tony"], ["sex", "M"], ["description", "Tony is a cat."], ["created_at", "2021-09-17 19:34:43.474981"], ["updated_at", "2021-09-17 19:34:43.474981"]]
+  ↳ app/controllers/cats_controller.rb:21
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cats_controller.rb:21
+Redirected to http://localhost:3000/cats/10
+Completed 302 Found in 29ms (ActiveRecord: 24.6ms)
+
+
+Started GET "/cats/10" for ::1 at 2021-09-17 15:34:43 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCat Load (1.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 366ms (Views: 362.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cats/10/edit" for ::1 at 2021-09-17 15:37:54 -0400
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCat Load (1.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:29
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/_form.html.erb (379.2ms)
+  Rendered cats/edit.html.erb within layouts/application (450.8ms)
+Completed 500 Internal Server Error in 623ms (ActiveRecord: 1.3ms)
+
+
+
+NameError - undefined local variable or method `selected' for #<#<Class:0x000056058fc08768>:0x00007fa0b0078570>
+Did you mean?  select:
+  app/views/cats/_form.html.erb:39:in `_app_views_cats__form_html_erb__1455212999510678294_70164062275780'
+  app/views/cats/edit.html.erb:6:in `_app_views_cats_edit_html_erb___835837545479615214_70164062341040'
+  app/controllers/cats_controller.rb:30:in `edit'
+
+Started POST "/__better_errors/58ca542694d08c46/variables" for ::1 at 2021-09-17 15:37:56 -0400
+Started GET "/cats/10/edit" for ::1 at 2021-09-17 15:38:23 -0400
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCat Load (2.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:29
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/_form.html.erb (0.9ms)
+  Rendered cats/edit.html.erb within layouts/application (65.2ms)
+Completed 200 OK in 442ms (Views: 437.1ms | ActiveRecord: 2.4ms)
+
+
+Started PATCH "/cats/10" for ::1 at 2021-09-17 15:38:34 -0400
+Processing by CatsController#update as HTML
+  Parameters: {"cat"=>{"name"=>"Tony", "birthdate"=>"2021-08-18", "color"=>"brown", "sex"=>"M", "description"=>"        Tony is a fat cat.\r\n    "}, "id"=>"10"}
+  [1m[36mCat Load (5.1ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cats_controller.rb:36
+  [1m[36mCat Update (6.0ms)[0m  [1m[33mUPDATE "cats" SET "description" = ?, "updated_at" = ? WHERE "cats"."id" = ?[0m  [["description", "        Tony is a fat cat.\r\n    "], ["updated_at", "2021-09-17 19:38:34.481869"], ["id", 10]]
+  ↳ app/controllers/cats_controller.rb:36
+  [1m[35m (8.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cats_controller.rb:36
+Redirected to http://localhost:3000/cats/10
+Completed 302 Found in 27ms (ActiveRecord: 19.4ms)
+
+
+Started GET "/cats/10" for ::1 at 2021-09-17 15:38:34 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCat Load (3.1ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 388ms (Views: 383.1ms | ActiveRecord: 3.1ms)
+
+
+Started PATCH "/cats/10" for ::1 at 2021-09-17 15:39:26 -0400
+Processing by CatsController#update as HTML
+  Parameters: {"cat"=>{"name"=>"Tony", "birthdate"=>"2021-08-18", "color"=>"brown", "sex"=>"M", "description"=>"        Tony is the fattest cat.\r\n    "}, "id"=>"10"}
+  [1m[36mCat Load (2.6ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cats_controller.rb:36
+  [1m[36mCat Update (4.4ms)[0m  [1m[33mUPDATE "cats" SET "description" = ?, "updated_at" = ? WHERE "cats"."id" = ?[0m  [["description", "        Tony is the fattest cat.\r\n    "], ["updated_at", "2021-09-17 19:39:26.210751"], ["id", 10]]
+  ↳ app/controllers/cats_controller.rb:36
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cats_controller.rb:36
+Redirected to http://localhost:3000/cats/10
+Completed 302 Found in 25ms (ActiveRecord: 13.6ms)
+
+
+Started GET "/cats/10" for ::1 at 2021-09-17 15:39:26 -0400
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCat Load (1.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/cats_controller.rb:9
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 363ms (Views: 360.1ms | ActiveRecord: 1.3ms)
+
+
